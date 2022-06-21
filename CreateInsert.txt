@@ -1,0 +1,56 @@
+DROP TABLE FireFighter;
+DROP TABLE FireFighter_Action;
+DROP TABLE Action;
+DROP TABLE FireTruck_Action;
+DROP TABLE FireTruck;
+
+CREATE TABLE FireFighter ( 
+idFirefighter int,
+FirstName varchar(30),
+LastName varchar(50),
+);
+CREATE TABLE FireFighter_Action ( 
+idFirefighter int,
+idAction int,
+);
+CREATE TABLE Action ( 
+idAction int,
+StartTime datetime,
+EndTime datetime,
+NeedSpecialEquipment bit
+);
+CREATE TABLE FireTruck_Action ( 
+idFiretruckAction int,
+idFiretruck int,
+idAction int,
+AssignmentDate datetime
+);
+
+CREATE TABLE FireTruck ( 
+idFiretruck int,
+OperationalNumber varchar(10),
+SpecialEquipment bit
+);
+
+select * from FireTruck_Action
+
+INSERT INTO FireFighter VALUES (1, 'Ya', 'Tut');
+INSERT INTO FireFighter VALUES (2, 'On', 'Tam');
+INSERT INTO FireFighter VALUES (3, 'Ty', 'Ryadom');
+
+
+INSERT INTO FireFighter_Action VALUES (1, 3);
+INSERT INTO FireFighter_Action VALUES (2, 2);
+INSERT INTO FireFighter_Action VALUES (3, 1);
+
+INSERT INTO Action VALUES (3, '09/09/2021', '03/09/2022', 0);
+INSERT INTO Action VALUES (2, '02/12/2000', '03/09/2022', 1);
+INSERT INTO Action VALUES (1, '01/03/2010', '03/09/2022', 0);
+
+INSERT INTO FireTruck_Action VALUES (11, 1, 3, '03.04.1999');
+INSERT INTO FireTruck_Action VALUES (22, 2, 2, '03.04.1999');
+INSERT INTO FireTruck_Action VALUES (33, 3, 1, '03.04.1999');
+
+INSERT INTO FireTruck VALUES (1, '228', 0);
+INSERT INTO FireTruck VALUES (2, '1337', 1);
+INSERT INTO FireTruck VALUES (3, '69', 1);
